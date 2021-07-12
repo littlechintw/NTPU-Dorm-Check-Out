@@ -13,6 +13,14 @@ const routes = [
     },
   },
   {
+    path: '/reserve',
+    name: 'Reserve',
+    component: () => import('../views/Reserve.vue'),
+    meta:{
+      title: '預約 | 北大宿舍離宿預約',
+    },
+  },
+  {
     path: '/login',
     name: 'Login',
     component: () => import('../views/Login.vue'),

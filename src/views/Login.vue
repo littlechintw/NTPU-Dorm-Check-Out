@@ -110,7 +110,7 @@ export default {
             } else {
               self.$cookie.set("session", response.data.session, 1);
               self.$cookie.set("id", response.data.message.id, 1);
-              self.$router.push("/");
+              self.$router.push("/reserve");
               location.reload();
             }
           })
@@ -122,7 +122,7 @@ export default {
   },
   mounted: function () {
     if (this.$cookie.get("session") && this.$cookie.get("id")) {
-      this.$router.push("/");
+      this.$router.push("/reserve");
     }
   },
 };

@@ -2,8 +2,22 @@
   <v-app style="background-color: #feffff">
     <div class="inapp">
       <v-app-bar app dark dense flat color="#264653">
-        <v-toolbar-title>北大宿舍離宿預約</v-toolbar-title>
+        <v-toolbar-title>
+          <a href="/" style="color: white; text-decoration: none"
+            >北大宿舍離宿預約</a
+          >
+        </v-toolbar-title>
         <v-spacer></v-spacer>
+        <v-btn
+          v-show="reserveBtnShow"
+          href="/reserve"
+          elevation="2"
+          outlined
+          plain
+          raised
+          >預約 / Reserve</v-btn
+        >
+        <v-card width="10px"></v-card>
         <v-btn :href="btn.url" elevation="2" outlined plain raised>{{
           btn.title
         }}</v-btn>
@@ -43,6 +57,7 @@ export default {
       title: "LOGIN",
       url: "/login",
     },
+    reserveBtnShow: false,
     account: "",
     login: false,
     Height: 0,
@@ -52,6 +67,7 @@ export default {
     if (this.$cookie.get("id")) {
       this.btn.title = "LOGOUT";
       this.btn.url = "/logout";
+      this.reserveBtnShow = true;
       this.account = Base64.decode(this.$cookie.get("id"));
     }
     this.Height = document.documentElement.clientHeight - 90;

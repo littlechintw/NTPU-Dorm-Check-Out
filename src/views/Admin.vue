@@ -88,6 +88,15 @@
                         </h3>
                       </template>
 
+                      <template v-slot:item.parking="{ item }">
+                        <h3
+                          v-show="item.parking === 'yes'"
+                          style="color: #2b7a78"
+                        >
+                          ✔️
+                        </h3>
+                      </template>
+
                       <template v-slot:item.currentPeople="{ item }">
                         <v-chip
                           :color="
@@ -170,6 +179,15 @@ export default {
         { tab: "7/20", content: "Tab 5 Content" },
         { tab: "7/21", content: "Tab 6 Content" },
         { tab: "7/22", content: "Tab 7 Content" },
+        { tab: "7/23", content: "Tab 7 Content" },
+        { tab: "7/24", content: "Tab 7 Content" },
+        { tab: "7/25", content: "Tab 7 Content" },
+        { tab: "7/26", content: "Tab 7 Content" },
+        { tab: "7/27", content: "Tab 7 Content" },
+        { tab: "7/28", content: "Tab 7 Content" },
+        { tab: "7/29", content: "Tab 7 Content" },
+        { tab: "7/30", content: "Tab 7 Content" },
+        { tab: "7/31", content: "Tab 7 Content" },
       ],
       saveStatusData: [],
       statusData: [],
@@ -179,6 +197,7 @@ export default {
         { text: "學號", value: "stu_id" },
         { text: "棟別", value: "build" },
         { text: "預約時間", value: "timestamp" },
+        { text: "停車券", value: "parking" },
       ],
     };
   },
