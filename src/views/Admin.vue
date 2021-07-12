@@ -17,7 +17,6 @@
             >
               <v-text-field
                 v-model="stuid"
-                :rules="stuidRules"
                 label="學號 / Student ID"
                 type="number"
                 required
@@ -275,6 +274,7 @@ export default {
         }
       }
       this.statusData = tmp;
+      this.stuid = "";
     },
   },
   mounted: function () {
