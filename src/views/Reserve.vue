@@ -152,8 +152,9 @@
                 <v-card-subtitle> Please comfirm the time! </v-card-subtitle>
                 <v-card-text>
                   <h3>{{ overlayData.date }}</h3>
-
                   <h3>{{ overlayData.time }}</h3>
+                  <h3 style="color: #c75497">{{ overlayCheckIn }}</h3>
+                  <h3 style="color: #c75497">{{ overlayCheck }}</h3>
                   <br />
                   <h3>是否申請停車折扣代碼券？</h3>
                   <h4>Need parking discount coupon?</h4>
@@ -214,6 +215,8 @@ export default {
         uuid: "N/A",
         serve: false,
       },
+      overlayCheckIn: "N/A",
+      overlayCheck: "N/A",
       loginStatus: false,
       userData: {
         uuid: "N/A",
@@ -251,6 +254,13 @@ export default {
       this.window_width = window.innerWidth;
       this.overlay = !this.overlay;
       this.overlayData = item;
+      if (parseInt(item.uuid) <= 726) {
+        this.overlayCheckIn = "報到時間: 8:30 - 15:00";
+        this.overlayCheck = "檢查時間: 13:00 - 15:30";
+      } else {
+        this.overlayCheckIn = "";
+        this.overlayCheck = "檢查時間: 9:00 - 15:30";
+      }
     },
     overlayOutside() {
       this.overlay = false;
@@ -285,7 +295,7 @@ export default {
               self.userData.building = response.data.message.build;
               self.userData.reserve = true;
               self.statusData = response.data.message.data;
-              // self.changeStatusData("7/16");
+              self.statusData[0]["serve"] = true;
             } else {
               self.userData.building =
                 "已經完成預約，請在 " +
@@ -346,6 +356,7 @@ export default {
       }
     },
     chipGetColor(current, max) {
+      console.log(current / max);
       if (current >= max) return "#FF4F4F";
       else if (current / max <= 0.2) return "#4F9EFF";
       else if (current / max > 0.2 && current / max <= 0.6) return "#9EB53E";
