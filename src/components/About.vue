@@ -34,7 +34,7 @@
             <h3>7 月 16 日 ~ 7 月 26 日</h3>
           </v-row>
           <v-row align="center" justify="center" length>
-            <h4>報到 | 08:30 - 15:30</h4>
+            <h4>報到 | 08:30 - 15:00</h4>
           </v-row>
           <v-row align="center" justify="center" length>
             <h4>檢查 | 13:00 - 15:30</h4>
