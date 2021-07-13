@@ -37,6 +37,26 @@
             >
           </v-row>
 
+          <v-row v-show="loginStatus" align="center" justify="center" length>
+            <br />
+          </v-row>
+
+          <v-row
+            v-show="userData.loadDone"
+            align="center"
+            justify="center"
+            length
+          >
+            <v-btn
+              outlined
+              class="mr-4"
+              :href="downloadHref"
+              target="_blank"
+              @click="csv"
+              >下載 csv</v-btn
+            >
+          </v-row>
+
           <v-row v-show="!loginStatus" align="center" justify="center" length>
             <v-btn href="/login" elevation="2" outlined plain raised
               >Login</v-btn
@@ -198,6 +218,7 @@ export default {
         { text: "預約時間", value: "timestamp" },
         { text: "停車券", value: "parking" },
       ],
+      downloadHref: "N/A",
     };
   },
   components: {},
@@ -234,6 +255,7 @@ export default {
         .then(function (response) {
           console.log(response.data);
           self.$cookie.set("session", response.data.session, 1);
+          self.csv();
           self.userData.building = "";
           if (response.data.message.admin !== true) {
             alert("Why you here?");
@@ -245,6 +267,10 @@ export default {
             self.changeStatusData("7/16");
           } else {
             self.$cookie.set("session", response.data.session, 1);
+          }
+          if (response.data.code === 403) {
+            alert("You bad bad :(");
+            self.$router.push("/logout");
           }
         })
         .catch(function (error) {
@@ -275,6 +301,16 @@ export default {
       }
       this.statusData = tmp;
       this.stuid = "";
+    },
+    csv() {
+      this.downloadHref =
+        config.apiurl +
+        "/admin/access/csv/" +
+        Math.random() * 100 +
+        "/" +
+        this.$cookie.get("session") +
+        "/" +
+        this.$cookie.get("id");
     },
   },
   mounted: function () {

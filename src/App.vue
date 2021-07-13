@@ -26,7 +26,7 @@
       <v-main>
         <v-card v-show="account">
           <v-alert type="success" dense text dismissible>
-            已藉由 {{ account }} 登入
+            Login as {{ account }}
           </v-alert>
         </v-card>
         <div id="router" v-bind:style="{ minHeight: Height + 'px' }">

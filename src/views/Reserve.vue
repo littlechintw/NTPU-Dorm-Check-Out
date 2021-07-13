@@ -67,70 +67,6 @@
                   <br /><br />
                 </v-row>
               </v-card>
-              <!-- <v-tabs v-model="tab" background-color="primary" dark>
-                <v-tab
-                  v-for="item in tabItems"
-                  :key="item.tab"
-                  @click="changeStatusData(item.tab)"
-                >
-                  {{ item.tab }}
-                </v-tab>
-              </v-tabs> -->
-
-              <!-- <v-tabs-items v-model="tab">
-                <v-tab-item v-for="item in tabItems" :key="item.tab"> -->
-              <!-- - -->
-              <!-- <v-card v-show="userData.reserve" elevation="0">
-                    <v-data-table
-                      :headers="headers"
-                      :items="statusData"
-                      items-per-page="50"
-                    >
-                      <template v-slot:item.date="{ item }">
-                        <h3 style="color: #2b7a78">
-                          {{ item.date }}
-                        </h3>
-                      </template>
-
-                      <template v-slot:item.time="{ item }">
-                        <h3 style="color: #2b7a78">
-                          {{ item.time }}
-                        </h3>
-                      </template>
-
-                      <template v-slot:item.currentPeople="{ item }">
-                        <v-chip
-                          :color="
-                            chipGetColor(item.currentPeople, item.maxPeople)
-                          "
-                          dark
-                        >
-                          {{ item.currentPeople }}
-                        </v-chip>
-                      </template>
-
-                      <template v-slot:item.uuid="{ item }">
-                        <v-btn
-                          v-show="item.serve"
-                          @click="reserveBtn(item)"
-                          elevation="2"
-                          outlined
-                          plain
-                          raised
-                          small
-                          >預約 / Reserve</v-btn
-                        >
-                        <h3 v-show="!item.serve" style="color: #e76f51">⛔</h3>
-                      </template>
-                    </v-data-table>
-
-                    <v-row align="center" justify="left" length>
-                      <br /><br />
-                    </v-row>
-                  </v-card> -->
-              <!-- - -->
-              <!-- </v-tab-item>
-              </v-tabs-items> -->
             </v-card>
           </v-row>
 
@@ -255,11 +191,11 @@ export default {
       this.overlay = !this.overlay;
       this.overlayData = item;
       if (parseInt(item.uuid) <= 726) {
-        this.overlayCheckIn = "報到時間: 8:30 - 15:00";
-        this.overlayCheck = "檢查時間: 13:00 - 15:30";
+        this.overlayCheckIn = "報到 Check-in | 8:30 - 15:00";
+        this.overlayCheck = "檢查 Checking | 13:00 - 15:30";
       } else {
         this.overlayCheckIn = "";
-        this.overlayCheck = "檢查時間: 9:00 - 15:30";
+        this.overlayCheck = "檢查 Checking | 9:00 - 15:30";
       }
     },
     overlayOutside() {
@@ -295,7 +231,6 @@ export default {
               self.userData.building = response.data.message.build;
               self.userData.reserve = true;
               self.statusData = response.data.message.data;
-              self.statusData[0]["serve"] = true;
             } else {
               self.userData.building =
                 "已經完成預約，請在 " +
@@ -307,6 +242,10 @@ export default {
             }
           } else {
             self.$cookie.set("session", response.data.session, 1);
+          }
+          if (response.data.code === 403) {
+            alert("You bad bad :(");
+            self.$router.push("/logout");
           }
         })
         .catch(function (error) {
@@ -344,6 +283,10 @@ export default {
               }
             } else {
               self.$cookie.set("session", response.data.session, 1);
+            }
+            if (response.data.code === 403) {
+              alert("You bad bad :(");
+              self.$router.push("/logout");
             }
           })
           .catch(function (error) {
