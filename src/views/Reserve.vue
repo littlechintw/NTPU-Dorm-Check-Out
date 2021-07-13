@@ -230,7 +230,7 @@ export default {
               self.saveStatusData = response.data.message.data;
               self.userData.building = response.data.message.build;
               self.userData.reserve = true;
-              self.statusData = response.data.message.data;
+              self.changeStatusData();
             } else {
               self.userData.building =
                 "已經完成預約，請在 " +
@@ -279,7 +279,8 @@ export default {
               } else {
                 self.userData.reserve = true;
                 self.userData.building = "預約失敗，人數已滿或停止預約";
-                self.statusData = response.data.message.data;
+                self.saveStatusData = response.data.message.data;
+                self.changeStatusData();
               }
             } else {
               self.$cookie.set("session", response.data.session, 1);
@@ -305,15 +306,16 @@ export default {
       else if (current / max > 0.2 && current / max <= 0.6) return "#9EB53E";
       else if (current / max > 0.6) return "#FFAC4F";
     },
-    // changeStatusData(date) {
-    //   var tmp = [];
-    //   for (var status in this.saveStatusData) {
-    //     if (this.saveStatusData[status]["date"] === date) {
-    //       tmp.push(this.saveStatusData[status]);
-    //     }
-    //   }
-    //   this.statusData = tmp;
-    // },
+    changeStatusData() {
+      const d = new Date();
+      let date_uuid = (d.getMonth() + 1) * 100 + d.getDate();
+      var tmp = [];
+      for (var status in this.saveStatusData) {
+        if (parseInt(this.saveStatusData[status]["uuid"]) >= date_uuid)
+          tmp.push(this.saveStatusData[status]);
+      }
+      this.statusData = tmp;
+    },
   },
   mounted: function () {
     if (this.$cookie.get("session") && this.$cookie.get("id")) {

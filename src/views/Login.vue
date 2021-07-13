@@ -9,6 +9,12 @@
             <v-row align="center" justify="center" length>
               <h3>請登入學生資訊系統帳號</h3>
             </v-row>
+
+            <v-row align="center" justify="center" length>
+              <h5 style="color: gray">
+                Login with your student information system account.
+              </h5>
+            </v-row>
             <v-row align="center" justify="center" length>
               <v-form
                 ref="form"
@@ -35,7 +41,7 @@
                   color="#87C1A2"
                   class="mr-4"
                   @click="validate"
-                  >登入</v-btn
+                  >登入 / Login</v-btn
                 >
               </v-form>
             </v-row>
