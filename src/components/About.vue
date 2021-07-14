@@ -32,7 +32,8 @@
           </v-row>
           <v-row align="center" justify="center" length>
             <v-card class="mx-auto" elevation="0" color="#EEEEEE">
-              <h3>7 / 16 ~ 7 / 26</h3>
+              <h3>7 / 16 ~ 7 / 23</h3>
+              <h3>7 / 25 ~ 7 / 26</h3>
             </v-card>
             <v-card width="10px"></v-card>
             <v-divider vertical></v-divider>
@@ -42,6 +43,9 @@
                 <h4>檢查 Checking | 13:00 - 15:30</h4>
               </v-card>
             </v-col>
+          </v-row>
+          <v-row align="center" justify="center" length>
+            <h5 style="color: #EC3913">7 / 14 因應停電暫停受理</h5>
           </v-row>
           <v-row align="center" justify="center" length>
             <br />

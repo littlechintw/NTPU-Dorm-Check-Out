@@ -80,11 +80,15 @@ export default {
 </script>
 
 <style>
+@import "./assets/font/font.css";
+/* div {
+  font-family: Open Huninn;
+} */
 .inapp {
   width: 80%;
   margin-left: 10%;
 }
 #app {
-  font-family: Noto Sans SC;
+  font-family: Open Huninn;
 }
 </style>

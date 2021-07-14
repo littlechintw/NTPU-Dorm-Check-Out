@@ -10,6 +10,14 @@ Vue.config.productionTip = false
 import VueCookie from 'vue-cookie'
 Vue.use(VueCookie)
 
+// GA
+import VueAnalytics from 'vue-analytics'
+Vue.use(VueAnalytics, {
+  id: 'UA-167881827-4',
+  router,
+  checkDuplicatedScript: true
+})
+
 new Vue({
   router,
   store,
