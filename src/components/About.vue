@@ -45,7 +45,7 @@
             </v-col>
           </v-row>
           <v-row align="center" justify="center" length>
-            <h5 style="color: #EC3913">7 / 14 因應停電暫停受理</h5>
+            <h5 style="color: #EC3913">7 / 24 因應停電暫停受理</h5>
           </v-row>
           <v-row align="center" justify="center" length>
             <br />
