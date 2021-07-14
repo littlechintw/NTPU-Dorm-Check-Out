@@ -117,6 +117,82 @@
           <v-row align="center" justify="center" length>
             <br />
           </v-row>
+          <v-row align="center" justify="center" length>
+            <v-divider></v-divider>
+          </v-row>
+          <v-row align="center" justify="center" length>
+            <br />
+          </v-row>
+          <v-row align="center" justify="left" length>
+            <h2>Q & A</h2>
+          </v-row>
+          <v-row align="center" justify="left" length>
+            <h4 style="color: gray">Q & A</h4>
+          </v-row>
+          <v-row align="center" justify="center" length>
+            <br />
+          </v-row>
+          <v-row align="center" justify="left" length>
+            <h4>Q1. 我是已經回家的宿生，7 / 16 - 7 / 26 可以預約做離宿檢查嗎？</h4>
+          </v-row>
+          <v-row align="center" justify="left" length>
+            <h5 style="color: gray">
+              Ans. 可以，請依照公告說明預約，預約當日即需要完成
+            </h5>
+          </v-row>
+          <v-row align="center" justify="center" length>
+            <br />
+          </v-row>
+          <v-row align="center" justify="left" length>
+            <h4>Q2. 我是還在宿舍留宿的宿生，請問 7 / 26 前一定要離宿嗎？</h4>
+          </v-row>
+          <v-row align="center" justify="left" length>
+            <h5 style="color: gray">
+              Ans. 不用，全體住宿生的離宿作業截止日都是到 7 / 31
+            </h5>
+          </v-row>
+          <v-row align="center" justify="center" length>
+            <br />
+          </v-row>
+          <v-row align="center" justify="left" length>
+            <h4>Q3. 我 1 天的時間不夠整理，請問 7 / 16 - 7 / 26 能預約 2 天嗎？</h4>
+          </v-row>
+          <v-row align="center" justify="left" length>
+            <h5 style="color: gray">
+              Ans. 不行，但可以規劃於 7 / 27 - 7 / 31 之間進行離宿檢查作業
+            </h5>
+          </v-row>
+          <v-row align="center" justify="center" length>
+            <br />
+          </v-row>
+          <v-row align="center" justify="left" length>
+            <h4>Q4. 7 / 27 - 7 / 31 為什麼沒有報到時間？</h4>
+          </v-row>
+          <v-row align="center" justify="left" length>
+            <h5 style="color: gray">
+              Ans. 7 / 27 可能就會降級，所以自 7 / 27 號起，未完成離宿檢查作業的宿生會開放宿舍的門禁權限，即可返宿住宿，不用另外報到
+            </h5>
+          </v-row>
+          <v-row align="center" justify="center" length>
+            <br />
+          </v-row>
+          <v-row align="center" justify="left" length>
+            <h4>Q5. 7 / 27 - 7 / 31 可以申請訪客入內嗎？</h4>
+          </v-row>
+          <v-row align="center" justify="left" length>
+            <h5 style="color: gray">
+              Ans. 不行，雖然解除 3 級疫情警戒，為了防疫需求，一樣是會禁止訪客進入宿舍
+            </h5>
+          </v-row>
+          <v-row align="center" justify="center" length>
+            <br />
+          </v-row>
+          <v-row align="center" justify="left" length>
+            <h4 style="color: #264653">更多問題請寄電子郵件至 <a href="mailto:annwu6@mail.ntpu.edu.tw">annwu6 [at] mail.ntpu.edu.tw</a>，並請於信件註明學號、姓名與個案狀況</h4>
+          </v-row>
+          <v-row align="center" justify="center" length>
+            <br />
+          </v-row>
         </v-col>
       </v-row>
     </v-container>
