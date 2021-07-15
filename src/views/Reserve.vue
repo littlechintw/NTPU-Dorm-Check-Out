@@ -300,11 +300,16 @@ export default {
       }
     },
     chipGetColor(current, max) {
-      console.log(current / max);
-      if (current >= max) return "#FF4F4F";
-      else if (current / max <= 0.2) return "#4F9EFF";
-      else if (current / max > 0.2 && current / max <= 0.6) return "#9EB53E";
-      else if (current / max > 0.6) return "#FFAC4F";
+      console.log("---");
+      let cu = parseInt(current);
+      let ma = parseInt(max);
+      var finalColor = "N/A";
+      if (cu >= ma) finalColor = "#FF4F4F";
+      else if (cu / ma <= 0.2) finalColor = "#4F9EFF";
+      else if (cu / ma > 0.2 && cu / ma <= 0.6) finalColor = "#9EB53E";
+      else if (cu / ma > 0.6) finalColor = "#FFAC4F";
+      console.log(finalColor);
+      return finalColor;
     },
     changeStatusData() {
       const d = new Date();
