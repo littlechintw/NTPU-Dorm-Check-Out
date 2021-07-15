@@ -188,6 +188,17 @@
             <br />
           </v-row>
           <v-row align="center" justify="left" length>
+            <h4>Q6.暑假住宿生一樣要在 7 / 16 - 7 / 31 進行離宿作業嗎？什麼時候繳交暑假費用及辦理後續搬遷作業？</h4>
+          </v-row>
+          <v-row align="center" justify="left" length>
+            <h5 style="color: gray">
+              Ans. 不用在 7 / 16 - 7 / 31 進行搬遷作業。暑假住宿要等 109-2 離宿作業告一段落後，相關搬遷作業期程才會比較明確，請暑假住宿生注意住輔組最新公告。
+            </h5>
+          </v-row>
+          <v-row align="center" justify="center" length>
+            <br />
+          </v-row>
+          <v-row align="center" justify="left" length>
             <h4 style="color: #264653">更多問題請寄電子郵件至 <a href="mailto:annwu6@mail.ntpu.edu.tw">annwu6 [at] mail.ntpu.edu.tw</a>，並請於信件註明學號、姓名與個案狀況</h4>
           </v-row>
           <v-row align="center" justify="center" length>
