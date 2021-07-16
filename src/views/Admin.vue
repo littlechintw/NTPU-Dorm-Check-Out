@@ -108,10 +108,7 @@
                       </template>
 
                       <template v-slot:item.parking="{ item }">
-                        <h3
-                          v-show="item.parking === 'yes'"
-                          style="color: #2b7a78"
-                        >
+                        <h3 v-show="item.p == 'yes'" style="color: #2b7a78">
                           ✔️
                         </h3>
                       </template>
@@ -191,32 +188,29 @@ export default {
       },
       tab: null,
       tabItems: [
-        { tab: "7/16", content: "Tab 1 Content" },
-        { tab: "7/17", content: "Tab 2 Content" },
-        { tab: "7/18", content: "Tab 3 Content" },
-        { tab: "7/19", content: "Tab 4 Content" },
-        { tab: "7/20", content: "Tab 5 Content" },
-        { tab: "7/21", content: "Tab 6 Content" },
-        { tab: "7/22", content: "Tab 7 Content" },
-        { tab: "7/23", content: "Tab 7 Content" },
-        { tab: "7/24", content: "Tab 7 Content" },
-        { tab: "7/25", content: "Tab 7 Content" },
-        { tab: "7/26", content: "Tab 7 Content" },
-        { tab: "7/27", content: "Tab 7 Content" },
-        { tab: "7/28", content: "Tab 7 Content" },
-        { tab: "7/29", content: "Tab 7 Content" },
-        { tab: "7/30", content: "Tab 7 Content" },
-        { tab: "7/31", content: "Tab 7 Content" },
+        { tab: "7/16", content: "" },
+        { tab: "7/17", content: "" },
+        { tab: "7/18", content: "" },
+        { tab: "7/19", content: "" },
+        { tab: "7/20", content: "" },
+        { tab: "7/21", content: "" },
+        { tab: "7/22", content: "" },
+        { tab: "7/23", content: "" },
+        { tab: "7/25", content: "" },
+        { tab: "7/26", content: "" },
+        { tab: "7/27", content: "" },
+        { tab: "7/28", content: "" },
+        { tab: "7/29", content: "" },
+        { tab: "7/30", content: "" },
+        { tab: "7/31", content: "" },
       ],
       saveStatusData: [],
       statusData: [],
       headers: [
-        { text: "日期 / Date", value: "date" },
-        { text: "時間 / Time", value: "time" },
-        { text: "學號", value: "stu_id" },
-        { text: "棟別", value: "build" },
-        { text: "預約時間", value: "timestamp" },
-        { text: "停車券", value: "parking" },
+        { text: "日期 / Date", value: "d" },
+        { text: "學號", value: "s" },
+        { text: "棟別", value: "b" },
+        { text: "停車券", value: "p" },
       ],
       downloadHref: "N/A",
     };
@@ -286,7 +280,7 @@ export default {
     changeStatusData(date) {
       var tmp = [];
       for (var status in this.saveStatusData) {
-        if (this.saveStatusData[status]["date"] === date) {
+        if (this.saveStatusData[status]["d"] === date) {
           tmp.push(this.saveStatusData[status]);
         }
       }
@@ -295,7 +289,7 @@ export default {
     search() {
       var tmp = [];
       for (var status in this.saveStatusData) {
-        if (this.saveStatusData[status]["stu_id"] === this.stuid) {
+        if (this.saveStatusData[status]["s"] === this.stuid) {
           tmp.push(this.saveStatusData[status]);
         }
       }
