@@ -95,47 +95,16 @@
                       :items="statusData"
                       items-per-page="500"
                     >
-                      <template v-slot:item.date="{ item }">
+                      <template v-slot:item.d="{ item }">
                         <h3 style="color: #2b7a78">
-                          {{ item.date }}
+                          {{ item.d }}
                         </h3>
                       </template>
 
-                      <template v-slot:item.time="{ item }">
-                        <h3 style="color: #2b7a78">
-                          {{ item.time }}
-                        </h3>
-                      </template>
-
-                      <template v-slot:item.parking="{ item }">
-                        <h3 v-show="item.p == 'yes'" style="color: #2b7a78">
+                      <template v-slot:item.p="{ item }">
+                        <h3 v-show="item.p === 'yes'" style="color: #2b7a78">
                           ✔️
                         </h3>
-                      </template>
-
-                      <template v-slot:item.currentPeople="{ item }">
-                        <v-chip
-                          :color="
-                            chipGetColor(item.currentPeople, item.maxPeople)
-                          "
-                          dark
-                        >
-                          {{ item.currentPeople }}
-                        </v-chip>
-                      </template>
-
-                      <template v-slot:item.uuid="{ item }">
-                        <v-btn
-                          v-show="item.serve"
-                          @click="reserveBtn(item)"
-                          elevation="2"
-                          outlined
-                          plain
-                          raised
-                          small
-                          >預約 / Reserve</v-btn
-                        >
-                        <h3 v-show="!item.serve" style="color: #e76f51">⛔</h3>
                       </template>
                     </v-data-table>
 
@@ -207,7 +176,7 @@ export default {
       saveStatusData: [],
       statusData: [],
       headers: [
-        { text: "日期 / Date", value: "d" },
+        { text: "日期", value: "d" },
         { text: "學號", value: "s" },
         { text: "棟別", value: "b" },
         { text: "停車券", value: "p" },
