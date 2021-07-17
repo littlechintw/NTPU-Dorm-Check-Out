@@ -25,6 +25,12 @@
             <br />
           </v-row>
           <v-row align="center" justify="center" length>
+            <h3 style="color: #a93f29">整理完成請於寢室電話撥打 <strong>59146</strong></h3>
+          </v-row>
+          <v-row align="center" justify="center" length>
+            <br />
+          </v-row>
+          <v-row align="center" justify="center" length>
             <v-divider></v-divider>
           </v-row>
           <v-row align="center" justify="center" length>
