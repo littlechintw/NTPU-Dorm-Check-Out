@@ -29,11 +29,6 @@
             Login as {{ account }}
           </v-alert>
         </v-card>
-        <v-card>
-          <v-alert type="warning" dense text dismissible>
-            7 / 24 全校停電將可能造成伺服器無法正常運作
-          </v-alert>
-        </v-card>
         <div id="router" v-bind:style="{ minHeight: Height + 'px' }">
           <router-view />
         </div>
