@@ -69,6 +69,9 @@
             </v-col>
           </v-row>
           <v-row align="center" justify="center" length>
+            <h5 style="color: #EC3913">12:00 - 13:00 為人員休息時間</h5>
+          </v-row>
+          <v-row align="center" justify="center" length>
             <br />
           </v-row>
           <v-row align="center" justify="center" length>
