@@ -29,6 +29,11 @@
             Login as {{ account }}
           </v-alert>
         </v-card>
+        <v-card>
+          <v-alert type="warning" dense text dismissible>
+            預約系統已經關閉
+          </v-alert>
+        </v-card>
         <div id="router" v-bind:style="{ minHeight: Height + 'px' }">
           <router-view />
         </div>
